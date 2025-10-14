@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Sathvik Reddy Padi [simmu] - Developer and student interested in backend development and distributed systems."
+        />
+        <meta
+            name="keywords"
+            content="Sathvik Reddy Padi, simmu, backend developer, distributed systems, developer portfolio"
+        />
+        <meta name="author" content="Sathvik Reddy Padi [simmu]" />
+        <title>simmu</title>
+        <link href="./style.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    </head>
+
+    <body class="container">
+        <nav class="navigator">
+            <a href="./">home</a>
+            <a href="https://github.com/simmuuu" target="_blank" rel="noopener noreferrer" aria-label="github profile"
+                >github</a
+            >
+            <div class="nav-spacer"></div>
+            <button id="themeToggle" class="theme-toggle">
+                <span class="theme-icon">light</span>
+            </button>
+        </nav>
+
+        <div class="mid">
+            <div class="mid-text">
+                <div class="title">
+                    <p class="main-title">Sathvik Reddy Padi</p>
+                    <p>Developer, Student.</p>
+                </div>
+                <div class="content">
+                    <p>I am also known as simmu. I'm interested in backend development and distributed systems etc.</p>
+                    <br />
+                    <p>This website is a WIP.</p>
+                </div>
+            </div>
+        </div>
+
+        <img src="assets/kgb_panel.png" alt="cloud pic" />
+
+        <div class="spacer"></div>
+
+        <iframe
+            style="border-radius: 0 !important"
+            src="https://open.spotify.com/embed/track/59hVbgr8rfYkDbHfr8RcGI?theme=0"
+            width="100%"
+            height="151"
+            frameborder="0"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+        ></iframe>
+
+        <footer class="footer">
+            <hr />
+            <p>~ simmu</p>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const themeToggle = document.getElementById("themeToggle");
+                const body = document.body;
+
+                updateTheme();
+
+                themeToggle.addEventListener("click", () => {
+                    body.classList.toggle("light-theme");
+                    updateIcon();
+                });
+
+                function updateTheme() {
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        body.classList.remove("light-theme");
+                    } else {
+                        body.classList.add("light-theme");
+                    }
+                    updateIcon();
+                }
+
+                function updateIcon() {
+                    const icon = themeToggle.querySelector(".theme-icon");
+                    if (body.classList.contains("light-theme")) {
+                        icon.textContent = "light";
+                    } else {
+                        icon.textContent = "dark";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
