@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   overflow: auto;
   background-color: #0e130f;
 }
@@ -27,6 +28,7 @@ body {
   font-family: 'Geist', sans-serif;  padding: 2vh 2vw;
   max-width: 55%;
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
 }
 
 .navigator {
@@ -142,10 +144,12 @@ body.light-theme .footer hr {
   .container {
     max-width: 90%;
     padding: 1vh 1vw;
+    min-height: 100dvh; /* Use dynamic viewport height */
   }
 
   .navigator {
     gap: 0.3rem 0.5rem;
+    margin: 0.5rem 0; /* Reduced margin */
   }
 
   .navigator a {
@@ -159,20 +163,46 @@ body.light-theme .footer hr {
     font-size: 1.2rem; 
   }
 
+  .mid {
+    padding: 1rem 0; /* Reduced padding */
+  }
+
   .mid .title .main-title {
     font-size: 2.5rem;
+    margin-bottom: 0.5rem; /* Add explicit margin */
   }
 
   .mid .title p {
     font-size: 1.2rem;
+    margin-bottom: 1rem; /* Reduced margin */
   }
 
-  .footer,
   .mid .content {
     font-size: 1rem;
+    margin-bottom: 1rem; /* Reduced margin */
   }
 
   .footer {
+    font-size: 1rem;
     padding: 0.5rem 0;
+    min-height: auto; /* Remove fixed min-height on mobile */
+  }
+
+  .footer hr {
+    margin-bottom: 0.5rem; /* Reduced margin */
+  }
+
+  img {
+    max-height: 25vh; /* Limit image height on mobile */
+    object-fit: contain;
+    width: 100%;
+  }
+
+  iframe {
+    height: 80px !important; /* Make Spotify embed smaller on mobile */
+  }
+
+  .spacer {
+    flex-grow: 0.5; /* Less spacer growth on mobile */
   }
 }
